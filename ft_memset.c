@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 11:24:55 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/13 15:41:47 by dda-silv         ###   ########.fr       */
+/*   Created: 2021/01/13 13:28:43 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/01/13 15:42:32 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	return (0 <= c && c <= 127);
+	unsigned char	*sav_s;
+
+	sav_s = s;
+	while (n--)
+		*sav_s++ = c;
+	return (s);
 }
