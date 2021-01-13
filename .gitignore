@@ -1,0 +1,6 @@
+mains/
+a.out
+*.o
+libft.a
+libft.so
+test.sh
