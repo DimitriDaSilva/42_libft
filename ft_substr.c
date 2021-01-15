@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 18:46:58 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/13 19:11:59 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/15 10:09:02 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*new_str;
 
+	if (!s)
+		return (0);
 	if (ft_strlen(s) <= start)
 	{
 		if (!(new_str = ft_calloc(len + 1, sizeof(char))))

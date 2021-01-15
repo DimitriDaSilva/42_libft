@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/14 11:31:57 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/15 10:01:46 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char			**ft_split(char const *s, char c)
 	char	**sav_strs;
 	char	*sav_s;
 
+	if (!s)
+		return (0);
 	if (!(strs = malloc((get_length(s, c) + 1) * sizeof(char *))))
 		return (0);
 	sav_strs = strs;
