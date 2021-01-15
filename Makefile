@@ -68,7 +68,7 @@ RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -c $^ -o ${<:.c=.o} -I.
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
 
 ${NAME}:	${OBJS}
 			${ARRC} ${NAME} ${OBJS}
@@ -85,10 +85,6 @@ re:			fclean all
 
 bonus:	${OBJS} ${BONUS_OBJS}
 			${ARRC} ${NAME} ${OBJS} ${BONUS_OBJS}
-
-so:
-	$(CC) -fPIC -c $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
 normH:
 			~/.norminette/norminette.rb -R CheckDefine *.h
