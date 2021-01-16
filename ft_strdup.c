@@ -6,13 +6,21 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 18:46:57 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/12 18:26:57 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/16 18:48:15 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, const char *src);
+static char	*ft_strcpy(char *dest, const char *src)
+{
+	char *saved;
+
+	saved = dest;
+	while ((*dest++ = *src++) != '\0')
+		;
+	return (saved);
+}
 
 char		*ft_strdup(const char *s)
 {
@@ -25,14 +33,4 @@ char		*ft_strdup(const char *s)
 		return (0);
 	ft_strcpy(cpy, s);
 	return (cpy);
-}
-
-static char	*ft_strcpy(char *dest, const char *src)
-{
-	char *saved;
-
-	saved = dest;
-	while ((*dest++ = *src++) != '\0')
-		;
-	return (saved);
 }

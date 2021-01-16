@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 09:33:52 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/13 11:08:24 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/16 19:11:22 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char	*sav_big;
 	char	*sav_little;
 
+	if (!len)
+		return (0);
 	if (!(*little))
 		return ((char *)big);
 	while (*big)

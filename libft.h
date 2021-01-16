@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/15 17:25:28 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/16 18:47:34 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define ASCII_OFFSET_NUM 48
 # define ASCII_OFFSET_ALPHA 32
-# define INT_MIN (- INT_MAX - 1)
-# define INT_MAX 2147483647
 
 typedef struct		s_list
 {

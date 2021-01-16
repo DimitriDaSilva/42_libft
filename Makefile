@@ -70,7 +70,7 @@ CFLAGS	= -Wall -Wextra -Werror
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			${ARRC} ${NAME} ${OBJS}
 
 all:		${NAME}
@@ -87,7 +87,7 @@ bonus:	${OBJS} ${BONUS_OBJS}
 			${ARRC} ${NAME} ${OBJS} ${BONUS_OBJS}
 
 normH:
-			~/.norminette/norminette.rb -R CheckDefine *.h
+			~/.norminette/norminette.rb *.h
 
 normC:
-			~/.norminette/norminette.rb -R CheckForbiddenSourceHeader *.c
+			~/.norminette/norminette.rb *.c

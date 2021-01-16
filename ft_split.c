@@ -6,13 +6,27 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 09:05:46 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/15 10:01:46 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/16 18:50:00 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_length(const char *s, char c);
+static size_t	get_length(const char *s, char c)
+{
+	int count;
+
+	count = 0;
+	while (*s)
+	{
+		if (*s++ == c)
+			continue ;
+		count++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (count);
+}
 
 char			**ft_split(char const *s, char c)
 {
@@ -41,20 +55,4 @@ char			**ft_split(char const *s, char c)
 	}
 	*strs = 0;
 	return (sav_strs);
-}
-
-static size_t	get_length(const char *s, char c)
-{
-	int count;
-
-	count = 0;
-	while (*s)
-	{
-		if (*s++ == c)
-			continue ;
-		count++;
-		while (*s && *s != c)
-			s++;
-	}
-	return (count);
 }

@@ -6,13 +6,20 @@
 /*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 18:55:24 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/15 10:03:47 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/01/16 18:49:08 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		convert_to_char(int nb);
+int		convert_to_char(int nb)
+{
+	if (nb < 0)
+	{
+		nb *= -1;
+	}
+	return (nb + ASCII_OFFSET_NUM);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -39,13 +46,4 @@ void	ft_putnbr_fd(int n, int fd)
 	n_to_print = convert_to_char(remainder);
 	write(fd, &n_to_print, 1);
 	return ;
-}
-
-int		convert_to_char(int nb)
-{
-	if (nb < 0)
-	{
-		nb *= -1;
-	}
-	return (nb + ASCII_OFFSET_NUM);
 }
