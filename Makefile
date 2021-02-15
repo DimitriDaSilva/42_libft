@@ -56,6 +56,7 @@ BONUS	=	ft_lstnew.c			\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
 			ft_lstmap.c			\
+			ft_putchar.c		\
 
 BONUS_OBJS	= ${BONUS:.c=.o}
 
@@ -85,6 +86,10 @@ re:			fclean all
 
 bonus:	${OBJS} ${BONUS_OBJS}
 			${ARRC} ${NAME} ${OBJS} ${BONUS_OBJS}
+
+so:
+		$(CC) -fPIC -c $(CFLAGS) $(SRCS)
+		gcc -shared -o libft.so $(OBJS)
 
 normH:
 			~/.norminette/norminette.rb *.h

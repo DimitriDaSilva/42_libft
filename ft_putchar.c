@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 18:25:20 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/15 18:59:54 by dds              ###   ########.fr       */
+/*   Created: 2020/10/22 16:22:02 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/15 19:19:45 by dds              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putchar(char c)
 {
-	void	*mem;
-
-	mem = 0;
-	if (size == 0)
-		return (ft_strdup(""));
-	if (nmemb == 0)
-		return (0);
-	if (!(mem = malloc(nmemb * size)))
-		return (0);
-	ft_memset(mem, 0, nmemb * size);
-	return (mem);
+	write(1, &c, 1);
 }

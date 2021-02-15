@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/01/16 18:47:34 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:35:19 by dds              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 								void *(*f)(void *),
 								void (*del)(void *));
+void				ft_putchar(char c);
 
 #endif
