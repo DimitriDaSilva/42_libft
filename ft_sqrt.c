@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
+/*   By: dda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 16:22:02 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:18:16 by dds              ###   ########.fr       */
+/*   Created: 2020/11/02 07:52:06 by dda-silv          #+#    #+#             */
+/*   Updated: 2020/11/05 20:04:52 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar(char c)
+int	ft_sqrt(int nb)
 {
-	write(1, &(unsigned char)c, 1);
+	int tmp;
+	int i;
+
+	tmp = nb;
+	i = 1;
+	while (tmp - i > 0)
+	{
+		tmp = (tmp + i) / 2;
+		i = nb / tmp;
+	}
+	if (tmp * tmp == nb)
+		return (tmp);
+	else
+		return (0);
 }

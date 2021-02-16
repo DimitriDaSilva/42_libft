@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
+/*   By: dda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 16:22:02 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:18:16 by dds              ###   ########.fr       */
+/*   Created: 2020/10/27 11:24:34 by dda-silv          #+#    #+#             */
+/*   Updated: 2020/10/27 13:48:54 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar(char c)
+char	*ft_strlowcase(char *str)
 {
-	write(1, &(unsigned char)c, 1);
+	char *saved;
+
+	saved = str;
+	while (*str)
+	{
+		if ('A' <= *str && *str <= 'Z')
+			*str += 32;
+		str++;
+	}
+	return (saved);
 }

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 09:33:52 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:04:41 by dds              ###   ########.fr       */
+/*   Created: 2020/10/29 11:11:52 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/16 00:14:50 by dds              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+char		*ft_strstr(const char *big, const char *little)
 {
 	size_t	little_len;
 
 	little_len = ft_strlen(little);
 	if (little_len == 0)
 		return ((char *)big);
-	if (len == 0)
-		return (0);
-	while (*(char *)big && (int)(len - little_len) != -1)
+	while (*(char *)big)
 	{
 		if (!ft_strncmp((char *)big, (char *)little, little_len))
 			return ((char *)big);
-		len--;
 		big++;
 	}
 	return (0);

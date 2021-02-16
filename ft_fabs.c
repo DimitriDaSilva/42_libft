@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_abs_dl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 16:22:02 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:18:16 by dds              ###   ########.fr       */
+/*   Created: 2021/01/18 14:25:57 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/01/24 20:40:23 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar(char c)
+double	ft_abs_dl(double n)
 {
-	write(1, &(unsigned char)c, 1);
+	return (n < 0 ? -n : n);
 }

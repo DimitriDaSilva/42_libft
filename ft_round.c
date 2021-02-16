@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_round.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
+/*   By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 16:22:02 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:18:16 by dds              ###   ########.fr       */
+/*   Created: 2021/01/24 16:45:02 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/01/25 11:03:09 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar(char c)
+int	ft_round(double nb)
 {
-	write(1, &(unsigned char)c, 1);
+	return (nb >= 0 ? (int)(nb + 0.5) : (int)(nb - 0.5));
 }

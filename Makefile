@@ -57,6 +57,35 @@ BONUS	=	ft_lstnew.c			\
 			ft_lstiter.c		\
 			ft_lstmap.c			\
 			ft_putchar.c		\
+			ft_abs.c			\
+			ft_convert_base.c	\
+			ft_fabs.c			\
+			ft_ftoa.c			\
+			ft_is_even.c		\
+			ft_isspace.c		\
+			ft_power.c			\
+			ft_putnbr.c			\
+			ft_putstr.c			\
+			ft_realloc.c		\
+			ft_remainder.c		\
+			ft_round.c			\
+			ft_sqrt.c			\
+			ft_str_is_alpha.c	\
+			ft_str_is_lowercase.c	\
+			ft_str_is_numeric.c		\
+			ft_str_is_printable.c	\
+			ft_str_is_uppercase.c	\
+			ft_strcapitalize.c		\
+			ft_strcat.c				\
+			ft_strchr_freq.c		\
+			ft_strcmp.c				\
+			ft_strcpy.c				\
+			ft_strlowcase.c			\
+			ft_strncat.c			\
+			ft_strncpy.c			\
+			ft_strstr.c				\
+			ft_strupcase.c			\
+
 
 BONUS_OBJS	= ${BONUS:.c=.o}
 
@@ -89,7 +118,7 @@ bonus:	${OBJS} ${BONUS_OBJS}
 
 so:
 		$(CC) -fPIC -c $(CFLAGS) $(SRCS)
-		gcc -shared -o libft.so $(OBJS)
+		gcc -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
 normH:
 			~/.norminette/norminette.rb *.h

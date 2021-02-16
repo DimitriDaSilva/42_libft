@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 09:33:52 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:04:41 by dds              ###   ########.fr       */
+/*   Created: 2021/01/28 15:44:12 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/16 00:02:10 by dds              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+int	ft_isspace(char c)
 {
-	size_t	little_len;
-
-	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return ((char *)big);
-	if (len == 0)
-		return (0);
-	while (*(char *)big && (int)(len - little_len) != -1)
-	{
-		if (!ft_strncmp((char *)big, (char *)little, little_len))
-			return ((char *)big);
-		len--;
-		big++;
-	}
-	return (0);
+	return (c == ' ' || (9 <= c && c <= 13));
 }

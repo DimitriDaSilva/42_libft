@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 09:33:52 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:04:41 by dds              ###   ########.fr       */
+/*   Created: 2020/10/28 15:46:35 by dda-silv          #+#    #+#             */
+/*   Updated: 2021/02/16 00:11:35 by dds              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+int		ft_strcmp(char *s1, char *s2)
 {
-	size_t	little_len;
-
-	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return ((char *)big);
-	if (len == 0)
-		return (0);
-	while (*(char *)big && (int)(len - little_len) != -1)
-	{
-		if (!ft_strncmp((char *)big, (char *)little, little_len))
-			return ((char *)big);
-		len--;
-		big++;
-	}
-	return (0);
+	while (*(unsigned char *)s1 == *(unsigned char *)s2++)
+		if (*(unsigned char *)s1++ == 0)
+			return (0);
+	return (*(unsigned char *)s1 - *(unsigned char *)--s2);
 }

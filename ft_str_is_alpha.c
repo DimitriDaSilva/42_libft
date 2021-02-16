@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dds <dda-silv@student.42lisboa.com>        +#+  +:+       +#+        */
+/*   By: dda-silv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 16:22:02 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 00:18:16 by dds              ###   ########.fr       */
+/*   Created: 2020/10/27 07:28:36 by dda-silv          #+#    #+#             */
+/*   Updated: 2020/10/27 20:57:22 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar(char c)
+int	ft_str_is_alpha(char *str)
 {
-	write(1, &(unsigned char)c, 1);
+	if (str == 0)
+		return (1);
+	while (*str)
+	{
+		if (!(('A' <= *str && *str <= 'Z') || ('a' <= *str && *str <= 'z')))
+			return (0);
+		str++;
+	}
+	return (1);
 }
