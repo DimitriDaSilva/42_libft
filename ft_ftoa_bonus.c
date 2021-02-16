@@ -6,12 +6,11 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 08:29:08 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 11:26:17 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:36:40 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 /*
 ** Check if the rounding requires a new digit (i.e. 99 -> 100)
