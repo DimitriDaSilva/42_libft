@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 12:40:14 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 10:35:33 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:23:36 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ static int	length_nbr(unsigned long long nbr, char *base)
 	return (count);
 }
 
+static void	convert(unsigned long long nbr,
+					char *base,
+					int base_size,
+					char *nbr_converted)
+{
+	if (nbr > (unsigned long long)base_size - 1)
+	{
+		convert(nbr / base_size, base, base_size, nbr_converted);
+		convert(nbr % base_size, base, base_size, nbr_converted);
+	}
+	else
+		ft_strncat(nbr_converted, &base[nbr], 1);
+}
+
 static void	ft_putnbr_base(unsigned long long nbr,
 							char *base,
 							char *nbr_converted)
@@ -52,20 +66,6 @@ static void	ft_putnbr_base(unsigned long long nbr,
 		base_size++;
 	convert(nbr, base, base_size, nbr_converted);
 	return ;
-}
-
-static void	convert(unsigned long long nbr,
-					char *base,
-					int base_size,
-					char *nbr_converted)
-{
-	if (nbr > (unsigned long long)base_size - 1)
-	{
-		convert(nbr / base_size, base, base_size, nbr_converted);
-		convert(nbr % base_size, base, base_size, nbr_converted);
-	}
-	else
-		ft_strncat(nbr_converted, &base[nbr], 1);
 }
 
 char		*ft_convert_base(unsigned long long nbr, char *base_to)

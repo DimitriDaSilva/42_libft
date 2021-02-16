@@ -6,65 +6,12 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 08:29:08 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 10:36:03 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/16 11:26:17 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Based on the remainder of nb, it will round the values
-** @param:	- [double] value to be converted into string
-**			- [int] total length of the number (sign incl.)
-**			- [char *] string formatted float
-** @return:	[char *] either the same or a new string (in case the rounding
-**                   leads to an additional digit)
-** Line-by-line comments:
-** @4		In this function, we traverse the string/number from right to left
-**			to be able to increment when necessary. -2 for '.' and for NULL
-** @5		We need the nb and a remainder to access the value positioned in
-**			index [length + 1]
-** @8-15	Case: if last number is not 9 then the round will only take place
-**			in the last digit. We can return after that case
-** @10-11	Case: if the last displayed number is not a 9 and the remainder is
-**			equal to 5, we apply the bankers rounding rule (aka round to even)
-** @12-13	Case: if the last displayed number is not a 9 and the remainder is
-**			above 5, we apply the standard rounding rule
-** @16-17	Case: the last number is a 9 and is incremented to '0'. We use
-**			while loop because it can generate a cascade of rounding
-** @18-19	Case: we just incremented a 9 to a 0 so we need to round up one
-**			more number. We need to make sure we are not changing the '.' and
-**			that we actually moved in the string/number
-** @20-21	Case: numbers that got successive bumping from 9 to 0 which
-**			reached '.' AND numbers without decimal point but with a
-**			remainder >= 5
-*/
-
-static char		*round_after_decimal(double nb, int length, char *str_nb)
-{
-	double	remainder;
-	int		i;
-
-	i = length - 1;
-	remainder = ft_remainder(nb * 10, 10);
-	if (remainder < 5)
-		return (str_nb);
-	if (str_nb[i] != '9')
-	{
-		if (remainder == 5 && !ft_is_even(str_nb[i]))
-			str_nb[i] += 1;
-		else if (5 < remainder)
-			str_nb[i] += 1;
-		return (str_nb);
-	}
-	while (str_nb[i] == '9' && ft_strchr(str_nb, '.'))
-		str_nb[i--] = '0';
-	if (ft_isdigit(str_nb[i]) && str_nb[i] != '9' && ft_strchr(str_nb, '.'))
-		str_nb[i] += 1;
-	else
-		str_nb = round_before_decimal(str_nb, length);
-	return (str_nb);
-}
 
 /*
 ** Check if the rounding requires a new digit (i.e. 99 -> 100)
@@ -181,6 +128,60 @@ static char		*round_before_decimal(char *str_nb, int length)
 	}
 	free(str_nb);
 	return (new_str_nb);
+}
+
+/*
+** Based on the remainder of nb, it will round the values
+** @param:	- [double] value to be converted into string
+**			- [int] total length of the number (sign incl.)
+**			- [char *] string formatted float
+** @return:	[char *] either the same or a new string (in case the rounding
+**                   leads to an additional digit)
+** Line-by-line comments:
+** @4		In this function, we traverse the string/number from right to left
+**			to be able to increment when necessary. -2 for '.' and for NULL
+** @5		We need the nb and a remainder to access the value positioned in
+**			index [length + 1]
+** @8-15	Case: if last number is not 9 then the round will only take place
+**			in the last digit. We can return after that case
+** @10-11	Case: if the last displayed number is not a 9 and the remainder is
+**			equal to 5, we apply the bankers rounding rule (aka round to even)
+** @12-13	Case: if the last displayed number is not a 9 and the remainder is
+**			above 5, we apply the standard rounding rule
+** @16-17	Case: the last number is a 9 and is incremented to '0'. We use
+**			while loop because it can generate a cascade of rounding
+** @18-19	Case: we just incremented a 9 to a 0 so we need to round up one
+**			more number. We need to make sure we are not changing the '.' and
+**			that we actually moved in the string/number
+** @20-21	Case: numbers that got successive bumping from 9 to 0 which
+**			reached '.' AND numbers without decimal point but with a
+**			remainder >= 5
+*/
+
+static char		*round_after_decimal(double nb, int length, char *str_nb)
+{
+	double	remainder;
+	int		i;
+
+	i = length - 1;
+	remainder = ft_remainder(nb * 10, 10);
+	if (remainder < 5)
+		return (str_nb);
+	if (str_nb[i] != '9')
+	{
+		if (remainder == 5 && !ft_is_even(str_nb[i]))
+			str_nb[i] += 1;
+		else if (5 < remainder)
+			str_nb[i] += 1;
+		return (str_nb);
+	}
+	while (str_nb[i] == '9' && ft_strchr(str_nb, '.'))
+		str_nb[i--] = '0';
+	if (ft_isdigit(str_nb[i]) && str_nb[i] != '9' && ft_strchr(str_nb, '.'))
+		str_nb[i] += 1;
+	else
+		str_nb = round_before_decimal(str_nb, length);
+	return (str_nb);
 }
 
 /*
