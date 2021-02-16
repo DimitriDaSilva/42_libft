@@ -56,37 +56,6 @@ BONUS	=	ft_lstnew.c			\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
 			ft_lstmap.c			\
-			ft_putchar_bonus.c		\
-			ft_abs_bonus.c			\
-			ft_convert_base_bonus.c	\
-			ft_fabs_bonus.c			\
-			ft_ftoa_bonus.c			\
-			ft_is_even_bonus.c		\
-			ft_isspace_bonus.c		\
-			ft_power_bonus.c			\
-			ft_putnbr_bonus.c			\
-			ft_putstr_bonus.c			\
-			ft_realloc_bonus.c		\
-			ft_remainder_bonus.c		\
-			ft_round_bonus.c			\
-			ft_sqrt_bonus.c			\
-			ft_str_is_alpha_bonus.c	\
-			ft_str_is_lowercase_bonus.c	\
-			ft_str_is_numeric_bonus.c		\
-			ft_str_is_printable_bonus.c	\
-			ft_str_is_uppercase_bonus.c	\
-			ft_strcapitalize_bonus.c		\
-			ft_strcat_bonus.c				\
-			ft_strchr_freq_bonus.c		\
-			ft_strcmp_bonus.c				\
-			ft_strcpy_bonus.c				\
-			ft_strlowcase_bonus.c			\
-			ft_strncat_bonus.c			\
-			ft_strncpy_bonus.c			\
-			ft_strstr_bonus.c				\
-			ft_strupcase_bonus.c			\
-			get_size_dl_bonus.c			\
-			get_size_lg_bonus.c			\
 
 BONUS_OBJS	= ${BONUS:.c=.o}
 

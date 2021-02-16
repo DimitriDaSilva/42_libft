@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 09:45:41 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 10:33:27 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/16 13:15:56 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void				ft_putnbr_fd(int n, int fd);
 
 /*
 ** BONUS PART
-** Suggested bonus functions
 */
 
 t_list				*ft_lstnew(void *content);
@@ -90,41 +89,5 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 								void *(*f)(void *),
 								void (*del)(void *));
-
-/*
-** Extra functions
-*/
-
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-void				ft_putnbr(int nb);
-char				*ft_strstr(const char *big, const char *little);
-void				*ft_realloc(void *ptr, size_t orig_size, size_t new_size);
-char				*ft_ftoa(double nb, int precision);
-char				*ft_convert_base(unsigned long long nbr, char *base_to);
-char				*ft_strcpy(char *dest, const char *src);
-char				*ft_strncpy(char *dest, char *src, size_t n);
-char				*ft_strncat(char *dest, char *src, unsigned int nb);
-char				*ft_strcat(char *dest, char *src);
-int					ft_strcmp(char *s1, char *s2);
-int					ft_strchr_freq(const char *s, int c);
-int					ft_isspace(char c);
-int					ft_is_even(int nb);
-double				ft_remainder(double numer, double denom);
-int					ft_power(int nb, int power);
-int					ft_sqrt(int nb);
-long long			ft_abs(long long n);
-double				ft_fabs(double n);
-size_t				get_size_dl(double nb);
-size_t				get_size_lg(long long nb);
-int					ft_round(double nb);
-char				*ft_strupcase(char *str);
-char				*ft_strlowcase(char *str);
-char				*ft_strcapitalize(char *str);
-int					ft_str_is_uppercase(char *str);
-int					ft_str_is_printable(char *str);
-int					ft_str_is_numeric(char *str);
-int					ft_str_is_lowercase(char *str);
-int					ft_str_is_alpha(char *str);
 
 #endif
