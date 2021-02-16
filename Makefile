@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dda-silv <dda-silv@student.42.fr>          +#+  +:+       +#+         #
+#    By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/01/11 15:58:25 by dda-silv          #+#    #+#              #
-#    Updated: 2021/01/12 10:37:58 by dda-silv         ###   ########.fr        #
+#    Created: 2021/02/16 10:08:28 by dda-silv          #+#    #+#              #
+#    Updated: 2021/02/16 10:08:28 by dda-silv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,36 +56,37 @@ BONUS	=	ft_lstnew.c			\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
 			ft_lstmap.c			\
-			ft_putchar.c		\
-			ft_abs.c			\
-			ft_convert_base.c	\
-			ft_fabs.c			\
-			ft_ftoa.c			\
-			ft_is_even.c		\
-			ft_isspace.c		\
-			ft_power.c			\
-			ft_putnbr.c			\
-			ft_putstr.c			\
-			ft_realloc.c		\
-			ft_remainder.c		\
-			ft_round.c			\
-			ft_sqrt.c			\
-			ft_str_is_alpha.c	\
-			ft_str_is_lowercase.c	\
-			ft_str_is_numeric.c		\
-			ft_str_is_printable.c	\
-			ft_str_is_uppercase.c	\
-			ft_strcapitalize.c		\
-			ft_strcat.c				\
-			ft_strchr_freq.c		\
-			ft_strcmp.c				\
-			ft_strcpy.c				\
-			ft_strlowcase.c			\
-			ft_strncat.c			\
-			ft_strncpy.c			\
-			ft_strstr.c				\
-			ft_strupcase.c			\
-
+			ft_putchar_bonus.c		\
+			ft_abs_bonus.c			\
+			ft_convert_base_bonus.c	\
+			ft_fabs_bonus.c			\
+			ft_ftoa_bonus.c			\
+			ft_is_even_bonus.c		\
+			ft_isspace_bonus.c		\
+			ft_power_bonus.c			\
+			ft_putnbr_bonus.c			\
+			ft_putstr_bonus.c			\
+			ft_realloc_bonus.c		\
+			ft_remainder_bonus.c		\
+			ft_round_bonus.c			\
+			ft_sqrt_bonus.c			\
+			ft_str_is_alpha_bonus.c	\
+			ft_str_is_lowercase_bonus.c	\
+			ft_str_is_numeric_bonus.c		\
+			ft_str_is_printable_bonus.c	\
+			ft_str_is_uppercase_bonus.c	\
+			ft_strcapitalize_bonus.c		\
+			ft_strcat_bonus.c				\
+			ft_strchr_freq_bonus.c		\
+			ft_strcmp_bonus.c				\
+			ft_strcpy_bonus.c				\
+			ft_strlowcase_bonus.c			\
+			ft_strncat_bonus.c			\
+			ft_strncpy_bonus.c			\
+			ft_strstr_bonus.c				\
+			ft_strupcase_bonus.c			\
+			get_size_dl_bonus.c			\
+			get_size_lg_bonus.c			\
 
 BONUS_OBJS	= ${BONUS:.c=.o}
 
