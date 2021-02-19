@@ -86,10 +86,6 @@ re:			fclean all
 bonus:	${OBJS} ${BONUS_OBJS}
 			${ARRC} ${NAME} ${OBJS} ${BONUS_OBJS}
 
-so:
-		$(CC) -fPIC -c $(CFLAGS) $(SRCS)
-		gcc -shared -o libft.so $(OBJS) $(BONUS_OBJS)
-
 old_normH:
 			norminette *.h
 
