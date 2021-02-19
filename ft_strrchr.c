@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 18:44:09 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/16 10:34:47 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:10:06 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		s_len;
 	char	*end_s;
+	char	*last;
 
-	s_len = ft_strlen(s);
-	end_s = (char *)s + s_len;
-	if ((unsigned char)c == 0)
+	last = 0;
+	end_s = (char *)s + ft_strlen(s);
+	if (c == 0)
 		return (end_s);
-	while (*s != *end_s--)
+	while (*s)
 	{
-		if (*end_s == (unsigned char)c)
-			return (end_s);
+		if (*s == c)
+			last = (char *)s;
+		s++;
 	}
-	return (0);
+	return (last);
 }
