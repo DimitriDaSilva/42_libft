@@ -90,8 +90,10 @@ so:
 		$(CC) -fPIC -c $(CFLAGS) $(SRCS)
 		gcc -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
-normH:
-			~/.norminette/norminette.rb *.h
+old_normH:
+			norminette *.h
 
-normC:
-			~/.norminette/norminette.rb *.c
+old_normC:
+			norminette *.c
+
+old_norm:	old_normC old_normH
