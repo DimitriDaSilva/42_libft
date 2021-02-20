@@ -6,7 +6,7 @@
 /*   By: dda-silv <dda-silv@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 12:31:59 by dda-silv          #+#    #+#             */
-/*   Updated: 2021/02/19 11:15:47 by dda-silv         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:16:41 by dda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	get_size_nbr(int n)
 	return (1 + get_size_nbr(n / 10));
 }
 
-static int		ft_abs2(int n)
+static int		ft_abs(int n)
 {
 	return (n < 0 ? -n : n);
 }
@@ -40,7 +40,7 @@ char			*ft_itoa(int n)
 	*str-- = '\0';
 	while (size_nbr--)
 	{
-		*str-- = ft_abs2(n) % 10 + ASCII_OFFSET_NUM;
+		*str-- = ft_abs(n) % 10 + ASCII_OFFSET_NUM;
 		if (-10 < n && n < 0)
 		{
 			*str-- = '-';
